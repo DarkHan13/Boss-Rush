@@ -21,7 +21,6 @@ public class BR_CirclingAttack : BR_Attack
         StartCoroutine(Attack(data));
     }
 
-    private Vector3 centerPoint;
     private GameObject centerObject;
     IEnumerator Attack(BR_AttackData data)
     {
@@ -32,25 +31,24 @@ public class BR_CirclingAttack : BR_Attack
             speedDirection = data.target.position - transform.position;
             speedDirection.Normalize();
         }
-        centerPoint = data.center;
         centerObject = new GameObject("center");
-        centerObject.transform.position = centerPoint;
+        centerObject.transform.position = data.center;
         gameObject.transform.parent = centerObject.transform;
+
+        if (data.needTrail)
+        {
+            GetComponent<TrailRenderer>().enabled = true;
+        }
+        
         yield return new WaitForSeconds(data.delay);
         float elapsed = 0f;
-        var radius = Vector2.Distance(centerPoint, transform.position);
-        var length = 2 * Mathf.PI * radius;
-        var rotationSpeed = length * data.frequency;
+        var moveCenter = speedDirection * data.speed;
+        var centerPoint = centerObject.transform;
         while (elapsed < data.duration)
         {
-            Debug.Log("radius: " + Vector3.Distance(centerObject.transform.position, transform.position));
-            
-            var moveCenter = speedDirection * data.speed;
-            centerObject.transform.position += moveCenter * Time.deltaTime;
-            Vector2 dir = (Vector2)transform.position - (Vector2)centerObject.transform.position;
-            Vector3 perpendicularDirection = new Vector3(-dir.y, dir.x).normalized;
-            Vector3 velocity = perpendicularDirection * rotationSpeed;
-            rb.velocity = velocity;
+            transform.RotateAround(centerPoint.position, Vector3.forward, data.degrees * Time.deltaTime);
+            centerPoint.position += moveCenter * Time.deltaTime;
+            centerObject.transform.position = centerPoint.position;
             yield return null;
             
             elapsed += Time.deltaTime;

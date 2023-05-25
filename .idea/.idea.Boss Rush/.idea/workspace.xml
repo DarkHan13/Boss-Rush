@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70329881-6f59-453b-8fc2-d482c3bf90bd" name="Changes" comment="" />
+    <list default="true" id="70329881-6f59-453b-8fc2-d482c3bf90bd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Boss Rush/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Boss Rush/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BossRush/BossRush.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BossRush/BossRush.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BossRush/Scripts/BR_Boss.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BossRush/Scripts/BR_Boss.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BossRush/Scripts/BR_CirclingAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BossRush/Scripts/BR_CirclingAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/685c48cf8f0b48abb797275c046dda6a158a00/f6/cc1952b5/Transform.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -82,7 +91,7 @@
       <workItem from="1684837811104" duration="855000" />
       <workItem from="1684862023364" duration="2156000" />
       <workItem from="1684947282803" duration="5705000" />
-      <workItem from="1684996000591" duration="1379000" />
+      <workItem from="1684996000591" duration="5304000" />
     </task>
     <servers />
   </component>
