@@ -19,21 +19,22 @@ public class BR_Boss : MonoBehaviour
     public event Action onDead;
 
 
+    private Animator _animator;
     private List<FuncAttacks> attacks = new();
 
 
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
+        
         health = maxHealth;
         healthbar.SetSliderValues(maxHealth, maxHealth, 0);
         startPos = transform.position;
         
         attacks.Add(new FuncAttacks(SinTargetOneShoot, 2f));
-
-        
         attacks.Add(new FuncAttacks(WallSinWaveShoot, 7f));
-        attacks.Add(new FuncAttacks(WaveShoot, 12f));
+        attacks.Add(new FuncAttacks(WaveShoot, 10f));
         attacks.Add(new FuncAttacks(SinWaveShoot, 14f));
         attacks.Add(new FuncAttacks(RainShoot, 6f));
         attacks.Add(new FuncAttacks(TargetBouncingOneShoot, 2f));
@@ -83,6 +84,7 @@ public class BR_Boss : MonoBehaviour
         health -= damage;
         healthbar.SetSliderValues(health);
         healthText.text = $"{(health / maxHealth) * 100}%";
+        _animator.Play("hurt");
         if (health <= 0)
         {
             Dead();
@@ -99,24 +101,22 @@ public class BR_Boss : MonoBehaviour
     void WaveShoot()
     {
         List<BR_Attack> attackInstance = new List<BR_Attack>();
-        for (int i = 0; i < 40; i++)
+        for (int i = 0; i <50; i++)
         {
             attackInstance.Add(PrepareAttack(attackObjects[0], startPos + new Vector3(0, 2)));
         }
-        var delay = 0f;
+        var delay = 0.5f;
         foreach (var attack in attackInstance)
         {
             var data = new BR_AttackData()
             {
-                direction = new Vector3(Mathf.Sin(delay * 2), -1),
-                speed = 7f,
+                direction = new Vector3(Mathf.Sin(delay * 3), -1),
+                speed = 12f,
                 delay = delay,
                 duration = 5f,
-                frequency = 7f,
-                amplitude = 15f
             };
             attack.ManageAttack(data);
-            delay += 0.25f;
+            delay += 0.15f;
         }
     }
     

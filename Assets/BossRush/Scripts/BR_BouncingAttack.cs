@@ -15,14 +15,6 @@ public class BR_BouncingAttack : BR_Attack
 
     private bool isEnter = false;
     
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            col.gameObject.GetComponent<BR_PlayerController>().GetDamage(damage);
-            Destroy(gameObject);
-        }
-    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -36,7 +28,10 @@ public class BR_BouncingAttack : BR_Attack
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            col.gameObject.GetComponent<BR_PlayerController>().GetDamage(damage);
+
+            var player = col.gameObject.GetComponent<BR_PlayerController>();
+            if (player.IsInvincible()) return;
+            player.GetDamage(damage);
             Destroy(gameObject);
 
         } else if (col.gameObject.layer == LayerMask.NameToLayer("Obstacle"))

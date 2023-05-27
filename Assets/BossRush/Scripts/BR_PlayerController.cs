@@ -37,6 +37,17 @@ public class BR_PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+
+        /*if (Input.GetKey(KeyCode.A))
+            horizontalInput = -1;
+        else if (Input.GetKey(KeyCode.D))
+            horizontalInput = 1;
+        else horizontalInput = 0;
+        if (Input.GetKey(KeyCode.S))
+            verticalInput = -1;
+        else if (Input.GetKey(KeyCode.W))
+            verticalInput = 1;
+        else verticalInput = 0;*/
     }
 
     private void FixedUpdate()
@@ -66,6 +77,11 @@ public class BR_PlayerController : MonoBehaviour
         _animator.SetBool(Invincible, _isInvincible);
     }
 
+    public bool IsInvincible()
+    {
+        return _isInvincible;
+    }
+    
     private void EndInvincible()
     {
         _isInvincible = false;

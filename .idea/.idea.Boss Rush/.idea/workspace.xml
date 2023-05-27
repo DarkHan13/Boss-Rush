@@ -8,7 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Boss Rush/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Boss Rush/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/BossRush/BossRush.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BossRush/BossRush.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/BossRush/Scripts/BR_Boss.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BossRush/Scripts/BR_Boss.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BossRush/Scripts/BR_CirclingAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BossRush/Scripts/BR_CirclingAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BossRush/Scripts/BR_BouncingAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BossRush/Scripts/BR_BouncingAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BossRush/Scripts/BR_PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BossRush/Scripts/BR_PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BossRush/Scripts/BossRushManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BossRush/Scripts/BossRushManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +94,7 @@
       <workItem from="1684862023364" duration="2156000" />
       <workItem from="1684947282803" duration="5705000" />
       <workItem from="1684996000591" duration="5304000" />
+      <workItem from="1685092135896" duration="2953000" />
     </task>
     <servers />
   </component>

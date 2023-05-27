@@ -16,6 +16,18 @@ public class BossRushManager : MonoBehaviour
         player.onDead += RestartLevel;
     }
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
+    }
+
     private void RestartLevel()
     {
         StartCoroutine(Restart());
