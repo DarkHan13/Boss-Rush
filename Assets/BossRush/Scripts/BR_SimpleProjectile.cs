@@ -36,6 +36,9 @@ public class BR_SimpleProjectile : BR_Attack
             dir = data.direction;
         dir.Normalize();
         float elapsed = 0f;
+        
+        GetComponent<AudioSource>().Play();
+        
         while (elapsed < data.duration)
         {
             rb.velocity = data.speed * dir;
